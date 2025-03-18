@@ -1,51 +1,23 @@
 #pragma once
 #include "Nodo.h"
+#include <iostream>
+#include <string>
 
+class ListaCircular {
+  private:
 
-// Se trata de una lista enlazada de nodos, en donde cada nodo tiene un elemento (un int), y un puntero al siguiente nodo
-class ListaCircular
-{
-	
-	Nodo *lista;
+    Nodo* cabeza;
+    int n;
 
-	int n;
+    Nodo* getNodo(int posicion);
 
-	int posicionUltimoNodoAccedido;
-	Nodo *punteroUltimoNodoAccedido;
+  public:
+    ListaCircular();
+    ~ListaCircular();
 
-
-	Nodo * getNodo (int posicion);
-
-public:
-
-	ListaCircular();
-
-	int getValor(int posicion);
-
-	
-	void setValor(int posicion, int nuevoValor);
-
-
-	int getN(); 
-
-
-	void insertar (int posicion, int nuevoValor);
-
-	
-	void eliminar (int posicion);
-
-
-	void concatenar(ListaCircular *listaAConcatenar);
-
-	int buscar(int elementoABuscar);
-
-
-	~ListaCircular();
+    void insertar(int posicion, std::string elemento);
+    void eliminar(int posicion);
+    std::string getElemento(int posicion);
+    void girar (int g);
+    void imprimir();
 };
-
-
-
-
-
-
-
